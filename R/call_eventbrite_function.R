@@ -7,6 +7,7 @@
 #' @param query the top-level query. Defaults to "events". Other query entries could be "users" or "orders".
 #' @param sub_query the particular information wanted from the query. If query = "events", then sub_query could be "attendees", "users", "orders", "display_settings", "ticket_classes", "canned_questions", "questions", "discounts", "public_discounts", "access_codes", "transfers", "teams", "ticket_groups", "ticket_classes", "ticket_buyer_settings"
 #' @param token the API token needed to call the API. Go here to create your own app and get an API token: http://www.eventbrite.com/myaccount/apps/
+#' @import "httr"
 #' @examples 
 #' url = call_eventbrite(event_id = event_id, sub_query = "orders", token = token) # will return the url for a given event's orders/registrations (using event_id)
 #' event = get_eb_event(url)
@@ -16,7 +17,7 @@
 
 
 call_eventbrite = function(event_id=NA, query="events", sub_query=NA, second_id=NA, token =NA){
-  tryCatch(library(httr), error = function(e){install.packages("httr")})
+  #tryCatch(library(httr), error = function(e){install.packages("httr")})
   baseURL = "https://www.eventbriteapi.com/v3/"
   if (is.na(token)) {
     warning("Please enter API token")
