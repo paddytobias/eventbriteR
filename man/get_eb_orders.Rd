@@ -16,6 +16,6 @@ This function returns the Eventbrite orders of an event. The function only works
 }
 \examples{
 url = call_eventbrite(event_id = event_id, sub_query = "orders", token = token) # will return the url for a given event's orders/registrations (using event_id)
-event = get_eb_event(url)
+event = eb_query(url)
 orders = get_eb_orders(event)
 }
