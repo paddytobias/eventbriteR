@@ -49,6 +49,8 @@ call_eventbrite = function(query="events", query_id=NA, sub_query=NA, sub_id=NA,
     stop("No id inserted for: ", query)
 #  } else if (query == "events" & sub_query == "search"){
  #   query_id = "/"
+  } else if (is.na(query_id)){
+    query_id = ""
   } else {
     query_id = paste0(query_id, "/")
   }
