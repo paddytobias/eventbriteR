@@ -26,4 +26,8 @@ Possible queries (so far - more to come):
 * ["users"](https://www.eventbrite.com.au/developer/v3/endpoints/users/)
 * ["orders"](https://www.eventbrite.com.au/developer/v3/endpoints/orders/)
 
-### Eventbrite sub-queries
+### To do:
+* Extend Eventbrite queries
+* Extend Eventbrite sub-queries - currently there is a function to get Eventbrite orders (`get_eb_order()`). Want to develop other functions to get other sub-queries, e.g., for the event details, event attendees
+* Investigate ways for .httr to hold the Eventbrite token to manage privacy concerns
+
