@@ -26,7 +26,20 @@ Possible queries (so far - more to come):
 * ["users"](https://www.eventbrite.com.au/developer/v3/endpoints/users/)
 * ["orders"](https://www.eventbrite.com.au/developer/v3/endpoints/orders/)
 
-### To do:
+
+## Example use:
+
+```
+url = call_eventbrite(query = "events", sub_query = "orders", query_id = 46834278588, token = token) # to get orders for the event matching this ID. This URL may be copy and pasted into a web browser to verify
+
+event = eb_query(url)
+
+order_names = get_eb_orders(event, names.only = TRUE) # to return more just names of those who have registered for the event
+
+```
+
+
+## To do:
 * Extend Eventbrite queries
 * Extend Eventbrite sub-queries - currently there is a function to get Eventbrite orders (`get_eb_order()`). Want to develop other functions to get other sub-queries, e.g., for the event details, event attendees
 * Investigate ways for .httr to hold the Eventbrite token to manage privacy concerns
