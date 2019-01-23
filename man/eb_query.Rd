@@ -4,17 +4,24 @@
 \alias{eb_query}
 \title{Get Eventbrite object}
 \usage{
-eb_query(url)
+eb_query(query = "events", query_id = NA, sub_query = NA,
+  sub_id = NA, token = NA)
 }
 \arguments{
-\item{url}{the Eventbrite API url to call. This URL can be generated with call_eventbrite}
+\item{query}{the top-level query. Defaults to "events". Other query entries could be "users" or "orders".}
+
+\item{query_id}{the unique id that every Eventbrite event has}
+
+\item{sub_query}{the particular information wanted from the query. If query = "events", then sub_query could be "attendees", "users", "orders", "display_settings", "ticket_classes", "canned_questions", "questions", "discounts", "public_discounts", "access_codes", "transfers", "teams", "ticket_groups", "ticket_classes", "ticket_buyer_settings"}
+
+\item{token}{the API token needed to call the API. Go here to create your own app and get an API token: http://www.eventbrite.com/myaccount/apps/}
 }
 \description{
-This function compiles extracts the Eventbrite's event data from its original JSON form.
-function relies on "jsonlite" package and will install if it doesn't exist
+This function is a wrapper for call_eventbrite to simplify getting data after the url has been tested to work. It extracts the Eventbrite's event data from its original JSON format.
+The function relies on "jsonlite" package and will install if it doesn't exist
 }
 \examples{
-url = call_eventbrite(event_id = event_id, sub_query = "orders", token = token) # will return the url for a given event's orders/registrations (using event_id)
-event = eb_query(url)
-orders = get_eb_orders(event)
+
+event = eb_query(event_id = event_id, sub_query = "orders", token = token) \%>\%
+get_eb_orders(event)
 }
