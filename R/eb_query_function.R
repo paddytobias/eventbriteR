@@ -19,7 +19,10 @@ eb_query <- function(query = "events", query_id = NA, sub_query = NA, sub_id = N
                          token = token)
   result <- jsonlite::fromJSON(url)
   object <-  names(result)[-grepl("pagination", names(result))]
-  message(paste("Your connection has returned:", object))
+  if (length(object)==0){
+    object = query
+  }
+  message(paste("Your query has returned the object:", object))
   return(result)
 }
 
