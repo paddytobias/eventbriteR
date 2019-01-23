@@ -6,15 +6,16 @@
 #' @import "jsonlite"
 #' @export
 #' @examples
-#' url = call_eventbrite(event_id = event_id, sub_query = "orders", token = token) # will return the url for a given event's orders/registrations (using event_id)
-#' event = eb_query(url)
-#' orders = get_eb_orders(event)
+#'
+#' event = eb_query(event_id = event_id, sub_query = "orders", token = token) %>%
+#' get_eb_orders(event)
 
-eb_query <- function(url){
-  #tryCatch(library(jsonlite), error = function(e){install.packages("jsonlite")})
-  result <- fromJSON(url)
+eb_query <- function(query = "events", query_id = NA, sub_query = NA, sub_id = NA, token = NA){
+  url <- call_eventbrite(query = query, query_id = query_id, sub_query = sub_query, sub_id = sub_id,
+                         token = token)
+  result <- jsonlite::fromJSON(url)
   object <-  names(result)[-grepl("pagination", names(result))]
-  message(paste("Your query has returned a sub-query for:", object))
+  message(paste("Your connection has returned:", object))
   return(result)
 }
 
