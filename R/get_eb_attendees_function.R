@@ -24,7 +24,7 @@ get_eb_attendees = function(event, names.only = TRUE){
   } else {
     attendees = event$attendees$profile
   }
-  checked_in_status = attendees$attendees$checked_in
-  attendee_names$checked_in = checked_in_status
+  checked_in_status = event$attendees$checked_in
+  attendees$checked_in = checked_in_status
   return(attendees)
 }
