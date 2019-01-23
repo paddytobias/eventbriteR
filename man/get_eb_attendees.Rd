@@ -12,12 +12,9 @@ get_eb_attendees(event, names.only = TRUE)
 \item{names.only}{Default set TRUE. To return a clean data.frame of attendees, which only contains names of registrations. If user wants all data in output, they can set names.only=FALSE}
 }
 \description{
-This function returns the Eventbrite attendees of an event. The function only works on Events that hold attendees data. As such, it is designed to be used on the output of
-Or call_eventbrite(sub_query="attendees") >> get_eb_attendees()
+This function returns the Eventbrite attendees of an event. The function only works on Events that hold attendees data. As such, it is designed to be used on the output of eb_query() (see example).
 It will return a dataframe of attendees of the course including a column giving a status on if they were "checked-in"
 }
 \examples{
-url = connect_eb(event_id = event_id, sub_query = "attendees", token = token) # will return the url for a given event's orders/registrations (using event_id)
-attendees = query_eb(url)
-attendees_names = get_eb_orders(attendees)
+attendees = eb_query(event_id = event_id, sub_query = "attendees", token = token) \%>\% get_eb_orders(attendees)
 }

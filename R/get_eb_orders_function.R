@@ -1,13 +1,12 @@
 #' Get Eventbrite orders
 #'
-#' This function returns the Eventbrite orders of an event. The function only works on Events that hold order data. As such, it is designed to be used on the output of call_eventbrite(sub_query="orders") >> get_eb_event()
+#' This function returns the Eventbrite orders of an event. The function only works on Events that hold order data. As such, it is designed to be used on the output of eb_query() (see example).
 #' @param event the event object returned from get_eb_event(url)
 #' @param names.only Default set TRUE. To return a clean data.frame of orders, which only contains names of registrations. If user wants all data in output, they can set names.only=FALSE
 #' @export
 #' @examples
-#' url = call_eventbrite(event_id = event_id, sub_query = "orders", token = token) # will return the url for a given event's orders/registrations (using event_id)
-#' event = eb_query(url)
-#' orders = get_eb_orders(event)
+#' event = eb_query(event_id = event_id, sub_query = "orders", token = token) %>% 
+#' 		get_eb_orders(event)
 
 
 get_eb_orders = function(event, names.only = TRUE){
