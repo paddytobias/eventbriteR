@@ -2,6 +2,7 @@
 
 export(call_eventbrite)
 export(eb_query)
+export(get_eb_attendees)
 export(get_eb_orders)
 import("httr")
 import("jsonlite")
