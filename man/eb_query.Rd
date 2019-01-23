@@ -14,6 +14,8 @@ eb_query(query = "events", query_id = NA, sub_query = NA,
 
 \item{sub_query}{the particular information wanted from the query. If query = "events", then sub_query could be "attendees", "users", "orders", "display_settings", "ticket_classes", "canned_questions", "questions", "discounts", "public_discounts", "access_codes", "transfers", "teams", "ticket_groups", "ticket_classes", "ticket_buyer_settings"}
 
+\item{sub_id}{the unique id for the sub-query}
+
 \item{token}{the API token needed to call the API. Go here to create your own app and get an API token: http://www.eventbrite.com/myaccount/apps/}
 }
 \description{

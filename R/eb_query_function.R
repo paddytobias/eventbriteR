@@ -4,6 +4,7 @@
 #' The function relies on "jsonlite" package and will install if it doesn't exist
 #' @param query_id the unique id that every Eventbrite event has
 #' @param query the top-level query. Defaults to "events". Other query entries could be "users" or "orders".
+#' @param sub_id the unique id for the sub-query
 #' @param sub_query the particular information wanted from the query. If query = "events", then sub_query could be "attendees", "users", "orders", "display_settings", "ticket_classes", "canned_questions", "questions", "discounts", "public_discounts", "access_codes", "transfers", "teams", "ticket_groups", "ticket_classes", "ticket_buyer_settings"
 #' @param token the API token needed to call the API. Go here to create your own app and get an API token: http://www.eventbrite.com/myaccount/apps/
 #' @import "jsonlite"
