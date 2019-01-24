@@ -16,12 +16,12 @@ get_eb_attendees = function(event, names.only = TRUE){
 
   if (names.only == TRUE){
     attendees = event$attendees$profile[,grepl("name|email", names(event$attendees$profile))]
-
+    checked_in_status = event$attendees$checked_in
+    attendees$checked_in = checked_in_status
     message("You are only getting names of registered people. Use names.only=FALSE if you want all results")
   } else {
-    attendees = event$attendees$profile
+    attendees = event$attendees
   }
-  checked_in_status = event$attendees$checked_in
-  attendees$checked_in = checked_in_status
+
   return(attendees)
 }
