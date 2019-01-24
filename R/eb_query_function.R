@@ -23,6 +23,7 @@ eb_query <- function(query = "events", query_id = NA, sub_query = NA, sub_id = N
     object = query
   }
   message(paste("Your query has returned the object:", object))
+  result$type <- object
   return(result)
 }
 
