@@ -6,7 +6,7 @@
 #' @param names.only Default set TRUE. To return a clean data.frame of attendees, which only contains names of registrations. If user wants all data in output, they can set names.only=FALSE
 #' @export
 #' @examples
-#' attendees = eb_query(event_id = event_id, sub_query = "attendees", token = .Options$eventbrite_token) %>% get_eb_orders(attendees)
+#' attendees = eb_query(event_id = event_id, sub_query = "attendees") %>% get_eb_orders(attendees)
 
 get_eb_attendees = function(event, names.only = TRUE){
   if (!("attendees" %in% names(event))){

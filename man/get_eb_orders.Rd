@@ -15,6 +15,6 @@ get_eb_orders(event, names.only = TRUE)
 This function returns the Eventbrite orders of an event. The function only works on Events that hold order data. As such, it is designed to be used on the output of eb_query() (see example).
 }
 \examples{
-event = eb_query(event_id = event_id, sub_query = "orders", token = .Options$eventbrite_token) \%>\% 
+event = eb_query(event_id = event_id, sub_query = "orders") \%>\% 
 		get_eb_orders()
 }

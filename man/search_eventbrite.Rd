@@ -4,17 +4,17 @@
 \alias{search_eventbrite}
 \title{Search Eventbrite with various parameters}
 \usage{
-search_eventbrite(query, ..., token = .Options$eventbrite_token)
+search_eventbrite(query, ..., token = .Options$eventbrite.token)
 }
 \arguments{
 \item{query}{the search term to query on. The Eventbrite API looks for matches in an event's title.}
 
 \item{...}{see possible parameters here: \link{https://www.eventbrite.com/platform/api#/reference/event-search/search-events}. Use the same parameter names as found in the API documentation.}
 
-\item{token}{the API token needed to call the API. Go here to create your own app and get an API token: http://www.eventbrite.com/myaccount/apps/}
+\item{token}{the API token needed to call the API. Go here to create your own app and get an API token: \link{http://www.eventbrite.com/myaccount/apps/}}
 }
 \description{
-Retrieving events based on a search query. There are numerous parameters that can be used in the query. Possible parameters can be found here: https://www.eventbrite.com/platform/api#/reference/event-search/search-events.
+Retrieving events based on a search query. There are numerous parameters that can be used in the query. Possible parameters can be found here: \link{https://www.eventbrite.com/platform/api#/reference/event-search/search-events}.
 In order to give you more control, after running the command, it will display how many pages of data (each a maximum of 50 rows) and ask if you want to continue with the query.
 }
 \details{

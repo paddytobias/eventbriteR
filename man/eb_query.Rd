@@ -16,7 +16,7 @@ eb_query(query = "events", query_id = NA, sub_query = NA,
 
 \item{sub_id}{the unique id for the sub-query}
 
-\item{token}{the API token needed to call the API. Go here to create your own app and get an API token: http://www.eventbrite.com/myaccount/apps/}
+\item{token}{the API token needed to call the API. Go here to create your own app and get an API token: \link{http://www.eventbrite.com/myaccount/apps/}}
 }
 \description{
 This function is a wrapper for call_eventbrite to simplify getting data after the url has been tested to work. It extracts the Eventbrite's event data from its original JSON format.

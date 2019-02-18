@@ -5,7 +5,7 @@
 #' @param names.only Default set TRUE. To return a clean data.frame of orders, which only contains names of registrations. If user wants all data in output, they can set names.only=FALSE
 #' @export
 #' @examples
-#' event = eb_query(event_id = event_id, sub_query = "orders", token = .Options$eventbrite_token) %>% 
+#' event = eb_query(event_id = event_id, sub_query = "orders") %>% 
 #' 		get_eb_orders()
 
 
