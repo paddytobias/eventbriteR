@@ -15,7 +15,7 @@
 #' python_courses = search_eventbrite(query = "python", location.address="Melbourne", location.within="50km")
 
 
-search_eventbrite = function(query, ..., token = .Options$eventbrite_token){
+search_eventbrite = function(query, ..., token = .Options$eventbrite.token){
   response = get_search(query = query, ... , token = token)
 
   n_pages = response$pagination$page_count
@@ -41,7 +41,7 @@ search_eventbrite = function(query, ..., token = .Options$eventbrite_token){
     		}
   		}
   	}
-  
+
   return(dat)
 }
 

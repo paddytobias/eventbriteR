@@ -1,12 +1,13 @@
 #' Utilities
 #' @import jsonlite
+#' @import httr
 #' @export
 
 get_search = function(query, ..., token = token){
   baseURL = "https://www.eventbriteapi.com/v3/events/search?"
-  call = GET(baseURL,
+  call = httr::GET(baseURL,
              query = list(q = query, ...),
-             add_headers("Authorization" = paste("Bearer", token), "Content-Type" = "application/json")
+             httr::add_headers("Authorization" = paste("Bearer", token), "Content-Type" = "application/json")
   )
 
   url = paste0(call$url, "&token=", token)
