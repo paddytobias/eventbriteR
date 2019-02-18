@@ -11,10 +11,10 @@
 #' @export
 #' @examples
 #'
-#' event = eb_query(event_id = event_id, sub_query = "orders", token = token) %>%
+#' event = eb_query(event_id = event_id, sub_query = "orders", token = eventbrite.token) %>%
 #' get_eb_orders(event)
 
-eb_query <- function(query = "events", query_id = NA, sub_query = NA, sub_id = NA, token = NA){
+eb_query <- function(query = "events", query_id = NA, sub_query = NA, sub_id = NA, token = eventbrite.token){
   url <- call_eventbrite(query = query, query_id = query_id, sub_query = sub_query, sub_id = sub_id,
                          token = token)
   result <- jsonlite::fromJSON(url)

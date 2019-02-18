@@ -5,7 +5,7 @@
 \title{Get Eventbrite object}
 \usage{
 eb_query(query = "events", query_id = NA, sub_query = NA,
-  sub_id = NA, token = NA)
+  sub_id = NA, token = eventbrite.token)
 }
 \arguments{
 \item{query}{the top-level query. Defaults to "events". Other query entries could be "users" or "orders".}
@@ -24,6 +24,6 @@ The function relies on "jsonlite" package and will install if it doesn't exist
 }
 \examples{
 
-event = eb_query(event_id = event_id, sub_query = "orders", token = token) \%>\%
+event = eb_query(event_id = event_id, sub_query = "orders", token = eventbrite.token) \%>\%
 get_eb_orders(event)
 }

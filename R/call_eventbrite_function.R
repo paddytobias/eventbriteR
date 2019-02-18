@@ -17,7 +17,7 @@
 
 
 
-call_eventbrite = function(query="events", query_id=NA, sub_query=NA, sub_id=NA, token =NA){
+call_eventbrite = function(query="events", query_id=NA, sub_query=NA, sub_id=NA, token = eventbrite.token){
   #tryCatch(library(httr), error = function(e){install.packages("httr")})
   baseURL = "https://www.eventbriteapi.com/v3/"
   if (is.na(token)) {

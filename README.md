@@ -9,8 +9,25 @@ It is this token that you need to use this package.
 ## Things you'll need
 Before you start:
 
-* API token - ensure you have generated an API token by creating an Eventbrite App. Go [here to sign in](https://www.eventbrite.com.au/myaccount/apps) and [here for more information](https://www.eventbrite.com/developer/v3/quickstart/)
+* API OAuth token - ensure you have generated an API token by creating an Eventbrite App. Go [here to sign in](https://www.eventbrite.com.au/myaccount/apps) and [here for more information](https://www.eventbrite.com/developer/v3/quickstart/)
 * ID - The ID of the object ('event', 'user' or 'order') that you want to query for.
+
+## Set up
+
+Before you start, you should save the `oauth token` in your environment. This will ensure that you don't have to pass the token to every query you do. 
+
+To do this, run:
+
+```
+options(
+
+	eventbrite.token = XXXXXX
+
+)
+```
+
+... replacing XXXXXX with your unique token. 
+
 
 ## Functions and workflow
 
