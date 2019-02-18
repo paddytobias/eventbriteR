@@ -4,7 +4,7 @@
 \alias{search_eventbrite}
 \title{Search Eventbrite with various parameters}
 \usage{
-search_eventbrite(query, ..., token = eventbrite.token)
+search_eventbrite(query, ..., token = .Options$eventbrite_token)
 }
 \arguments{
 \item{query}{the search term to query on. The Eventbrite API looks for matches in an event's title.}

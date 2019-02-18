@@ -5,7 +5,7 @@
 \title{Call Eventbrite}
 \usage{
 call_eventbrite(query = "events", query_id = NA, sub_query = NA,
-  sub_id = NA, token = eventbrite.token)
+  sub_id = NA, token = .Options$eventbrite_token)
 }
 \arguments{
 \item{query}{the top-level query. Defaults to "events". Other query entries could be "users" or "orders".}

@@ -16,5 +16,5 @@ This function returns the Eventbrite attendees of an event. The function only wo
 It will return a dataframe of attendees of the course including a column giving a status on if they were "checked-in"
 }
 \examples{
-attendees = eb_query(event_id = event_id, sub_query = "attendees", token = token) \%>\% get_eb_orders(attendees)
+attendees = eb_query(event_id = event_id, sub_query = "attendees", token = .Options$eventbrite_token) \%>\% get_eb_orders(attendees)
 }

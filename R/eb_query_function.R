@@ -11,7 +11,7 @@
 #' @export
 #' @examples
 #'
-#' event = eb_query(event_id = event_id, sub_query = "orders", token = eventbrite.token) %>%
+#' event = eb_query(event_id = event_id, sub_query = "orders", token = .Options$eventbrite_token) %>%
 #' get_eb_orders(event)
 
 eb_query <- function(query = "events", query_id = NA, sub_query = NA, sub_id = NA, token = eventbrite.token){

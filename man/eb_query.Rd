@@ -24,6 +24,6 @@ The function relies on "jsonlite" package and will install if it doesn't exist
 }
 \examples{
 
-event = eb_query(event_id = event_id, sub_query = "orders", token = eventbrite.token) \%>\%
+event = eb_query(event_id = event_id, sub_query = "orders", token = .Options$eventbrite_token) \%>\%
 get_eb_orders(event)
 }

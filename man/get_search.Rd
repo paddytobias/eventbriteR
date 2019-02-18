@@ -4,7 +4,7 @@
 \alias{get_search}
 \title{Utilities}
 \usage{
-get_search(query, ..., token = eventbrite.token)
+get_search(query, ..., token = token)
 }
 \description{
 Utilities

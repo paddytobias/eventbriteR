@@ -15,30 +15,33 @@
 #' python_courses = search_eventbrite(query = "python", location.address="Melbourne", location.within="50km")
 
 
-search_eventbrite = function(query, ..., token = eventbrite.token){
+search_eventbrite = function(query, ..., token = .Options$eventbrite_token){
   response = get_search(query = query, ... , token = token)
 
   n_pages = response$pagination$page_count
   message("There are ", n_pages, " pages to collect data from\n")
+  dat = data.frame(list.flatten(response$events), stringsAsFactors = F)
+  if(n_pages > 1){
+  	## prompt to continue?
+  	answer=FALSE
+  	while(answer == FALSE){
+    	to_continue = readline("Do you want to continue? Y / n")
+    	answer = to_continue %in% c("Y", "n")
+  	}
 
-  ## prompt to continue?
-  answer=FALSE
-  while(answer == FALSE){
-    to_continue = readline("Do you want to continue? Y / n")
-    answer = to_continue %in% c("Y", "n")
-  }
+  	if (to_continue == "Y"){
+    	#dat = data.frame(list.flatten(response$events), stringsAsFactors = F)
+    	message("Collected from page 1\n")
+    	for (i in 2:n_pages){
+      		response = get_search(query = query, ... , token = token, page = i)
+      		message("Collected from page ", i, "\n")
+      		response = data.frame(list.flatten(response$events), stringsAsFactors = F)
 
-  if (to_continue == "Y"){
-    dat = data.frame(list.flatten(response$events), stringsAsFactors = F)
-    message("Collected from page 1\n")
-    for (i in 2:n_pages){
-      response = get_search(query = query, ... , token = token, page = i)
-      message("Collected from page ", i, "\n")
-      response = data.frame(list.flatten(response$events), stringsAsFactors = F)
-
-      dat = suppressMessages(dplyr::full_join(dat, response))
-    }
-  }
+      		dat = suppressMessages(dplyr::full_join(dat, response))
+    		}
+  		}
+  	}
+  
   return(dat)
 }
 

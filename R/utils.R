@@ -2,7 +2,7 @@
 #' @import jsonlite
 #' @export
 
-get_search = function(query, ..., token = eventbrite.token){
+get_search = function(query, ..., token = token){
   baseURL = "https://www.eventbriteapi.com/v3/events/search?"
   call = GET(baseURL,
              query = list(q = query, ...),
