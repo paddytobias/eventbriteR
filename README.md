@@ -1,3 +1,5 @@
+[![GitHub stats](https://github-readme-stats.vercel.app/api?username=paddytobias)]
+
 # eventbriteR
 
 EventbriteR is an R package to call the Eventbrite API. 
